@@ -45,18 +45,18 @@ console.log(bubbleSort(numsRandomOrder));
 
 
 
-// const bubbleSort = (nums) => {
-//     let isSorted = false;
-//     while (!isSorted) {
-//         for (let i = 0; i < nums.length - 1; i++) {
-//             if (nums[i] > nums[i + 1]) {
-//                 [nums[i], nums[i + 1]] = [nums[i + 1], nums[i]];
-//                 isSorted = false;
-//             }
-//         }
-//     }
-//     return nums;
-// }
+const bubbleSort = (nums) => {
+    let isSorted = false;
+    while (!isSorted) {
+        for (let i = 0; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                [nums[i], nums[i + 1]] = [nums[i + 1], nums[i]];
+                isSorted = false;
+            }
+        }
+    }
+    return nums;
+}
 // /*****************************************************************************/
 
 
