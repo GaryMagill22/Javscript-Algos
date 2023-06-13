@@ -50,9 +50,29 @@ const expectedMerge4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @returns {Array<number>} A new sorted array containing all the elements of
  *    both given halves.
  */
-function merge(left, right) {
-    //Code goes here
+const merge = (left, right) => {
+  const sorted = [];
+  let i = 0;
+  let j = 0;
+  while (i !== left.length || j !== right.length) {
+    if (j === right.length || left[i] < right[j]) {
+      sorted.push(left[i])
+      i++;
+      continue;
+    } else if (i === left.length || right[j] < left[i]) {
+      sorted.push(right[j])
+      j++;
+      continue;
+    } else if (left[i] === right[j]) {
+      sorted.push(left[i]);
+      sorted.push(right[j]);
+      i++;
+      j++;
+    }
+  }
+  return sorted;
 }
+/**
 console.log(merge(sortedA1, sortedB1));
 console.log(merge(sortedA2, sortedB2));
 console.log(merge(sortedA3, sortedB3));
@@ -74,9 +94,17 @@ const expectedSort = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @returns {Array<number>} A New sorted array.
  */
 function mergeSort(nums) {
-    //Code goes here
+  if (nums.length <= 1) {
+    return nums;
+  }
+  let middle = Math.floor(nums.length / 2)
+  let left = nums.slice(0, middle);
+  let right = nums.slice(middle);
+  let sortedLeft = mergeSort(left);
+  let sortedRight = mergeSort(right);
+  return merge(sortedLeft, sortedRight);
 }
-const ex = [10,8,6,4,3,7,9,1,2,5];
+const ex = [10, 8, 6, 4, 3, 7, 9, 1, 2, 5];
 console.log(mergeSort(ex))
 
 /*****************************************************************************/
