@@ -67,11 +67,11 @@ function findConsqSums(nums, targetSum) {
             } else if (targetSum > 0 && sum > targetSum) {
                 break;
             }
-        }
-    } return total;
-    console.log(findConsqSums(nums1, sum1))
-    console.log(findConsqSums(nums2, sum2))
-    console.log(findConsqSums(nums3, sum3))
-    console.log(findConsqSums(nums4, sum4))
-    console.log(findConsqSums(nums5, sum5))
-
+        } return total;
+    }
+}
+console.log(findConsqSums(nums1, sum1))
+console.log(findConsqSums(nums2, sum2))
+console.log(findConsqSums(nums3, sum3))
+console.log(findConsqSums(nums4, sum4))
+console.log(findConsqSums(nums5, sum5))
