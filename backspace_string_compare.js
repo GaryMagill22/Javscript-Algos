@@ -65,3 +65,27 @@ console.log(backspaceStringCompare(S4, T4))
 /*****************************************************************************/
 
 module.exports = { backspaceStringCompare };
+
+
+function backspaceStringCompare(S, T) {
+    //Code goes here
+
+    function processBackSpaces(str) {
+        const stack = []
+
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] !== '#') {
+                const myPush = str[i]
+                // console.log(myPush)
+                stack.push(str[i])
+            } else if (stack.length !== 0) {
+                // console.log(stack)
+                stack.pop()
+            }
+        }
+        return stack.join('')
+        // console.log(stack)
+    }
+
+    return processBackSpaces(S) === processBackSpaces(T)
+}
